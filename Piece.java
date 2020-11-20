@@ -1,6 +1,11 @@
 public abstract class Piece {
 	
-	final int posX;
-	final int posY;
+	final boolean isWhite;
+
+	Piece(boolean isWhite) {
+
+		this.isWhite = isWhite;
+
+	}
 
 }

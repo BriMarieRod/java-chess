@@ -10,13 +10,15 @@ public class Board {
 	int posY;
 	int tileSize;
 
-	Piece[][] pieces;
+	Piece[][] pieces = new Piece[8][8];
 
 	Board(int posX, int posY, int tileSize) {
 
 		this.posX = posX;
 		this.posY = posY;
 		this.tileSize = tileSize;
+
+		pieces[7][4] = new King(true);
 
 	}
 

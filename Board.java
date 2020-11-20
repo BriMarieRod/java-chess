@@ -6,6 +6,9 @@ public class Board {
 
 	Color DARK = Color.RED;
 	Color LIGHT = Color.PINK;
+	Color DARK_PIECE = Color.BLACK;
+	Color LIGHT_PIECE = Color.WHITE;
+	//Font PIECE_FONT = new Font(g.getFont().getFontName(), Font.PLAIN, tileSize);
 	
 	int posX;
 	int posY;
@@ -33,10 +36,14 @@ public class Board {
 			for(int j = i%2; j < 8; j+=2)
 				g.fillRect(j*tileSize+posX, i*tileSize+posY, tileSize, tileSize);
 
-		g.setColor(Color.WHITE);
+		g.setColor(LIGHT_PIECE);
 		g.setFont(new Font(g.getFont().getFontName(), Font.PLAIN, tileSize));
-		pieces[4][7].draw(g, posX + tileSize*4, posY + tileSize*7 + tileSize);
-		System.out.println(posX + tileSize*4);
+		for(int i = 0; i < 8; i++)
+			for(int j = 0; j < 8; j++)
+				if(pieces[i][j] != null && pieces[i][j].isWhite)
+					pieces[i][j].draw(g, posX + tileSize*i, posY + tileSize*j + tileSize);
+		//pieces[4][7].draw(g, posX + tileSize*4, posY + tileSize*7 + tileSize);
+		//System.out.println(posX + tileSize*4);
 
 	}
 

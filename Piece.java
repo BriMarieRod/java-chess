@@ -1,3 +1,5 @@
+import java.awt.Graphics;
+
 public abstract class Piece {
 	
 	final boolean isWhite;
@@ -7,5 +9,7 @@ public abstract class Piece {
 		this.isWhite = isWhite;
 
 	}
+
+	abstract void draw(Graphics g, int x, int y);
 
 }

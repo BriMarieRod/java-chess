@@ -2,8 +2,11 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Arrays;
+import java.awt.Graphics;
 
 public class King extends Piece {
+
+	final String icon = "\u2654";
 	
 	King(boolean isWhite) {
 
@@ -27,6 +30,11 @@ public class King extends Piece {
 
 		return moves;
 
+	}
+
+	@Override
+	void draw(Graphics g, int x, int y) {
+		g.drawString(icon, x, y);
 	}
 
 }

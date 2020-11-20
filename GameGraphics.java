@@ -11,7 +11,9 @@ public class GameGraphics extends JPanel {
 		super.paintComponent(g);
 
 		board.draw(g);
-		System.out.println(board.pieces[7][4]);
+		///System.out.println(board.pieces[7][4]);
+
+		//g.drawString("\u2654", 10, 10);
 
 	}
 

@@ -14,6 +14,8 @@ public class Board {
 	int posY;
 	int tileSize;
 
+	int[] selected;
+
 	Piece[][] pieces = new Piece[8][8];
 
 	Board(int posX, int posY, int tileSize) {

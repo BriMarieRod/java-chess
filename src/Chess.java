@@ -7,6 +7,7 @@ public class Chess {
 
 		var graphics = new GameGraphics();
 		graphics.setBackground(Color.GRAY);
+		graphics.addMouseListener(new InputHandler());
 		
 		var frame = new JFrame();
 		frame.setSize(400, 400);

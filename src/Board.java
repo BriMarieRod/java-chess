@@ -8,6 +8,7 @@ public class Board {
 	Color LIGHT = Color.PINK;
 	Color DARK_PIECE = Color.BLACK;
 	Color LIGHT_PIECE = Color.WHITE;
+	Color SELECTED = Color.ORANGE;
 	//Font PIECE_FONT = new Font(g.getFont().getFontName(), Font.PLAIN, tileSize);
 	
 	int posX;
@@ -24,6 +25,8 @@ public class Board {
 		this.posY = posY;
 		this.tileSize = tileSize;
 
+		selected = new int[]{-1, -1};
+
 		pieces[4][7] = new King(true);
 
 	}
@@ -37,6 +40,11 @@ public class Board {
 		for(int i = 0; i < 8; i++)
 			for(int j = i%2; j < 8; j+=2)
 				g.fillRect(j*tileSize+posX, i*tileSize+posY, tileSize, tileSize);
+
+		if(selected[0] > -1) {
+			g.setColor(SELECTED);
+			g.fillRect(selected[0]*tileSize+posX, selected[1]*tileSize+posY, tileSize, tileSize);
+		}
 
 		g.setFont(new Font(g.getFont().getFontName(), Font.PLAIN, tileSize));
 		//g.setColor(LIGHT_PIECE);
@@ -53,6 +61,22 @@ public class Board {
 		//pieces[4][7].draw(g, posX + tileSize*4, posY + tileSize*7 + tileSize);
 		//System.out.println(posX + tileSize*4);
 
+	}
+
+	public void handleClick(int x, int y) {
+		//System.out.println(x + ", " + y);
+		if(pieces[x][y] != null) {
+			selected[0] = x;
+			selected[1] = y;
+		} else {
+			unselect();
+		}
+		//System.out.println(selected[0] + ", " + selected[1]);
+	}
+
+	public void unselect() {
+		selected[0] = -1;
+		selected[1] = -1;
 	}
 
 }

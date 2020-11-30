@@ -6,11 +6,11 @@ import java.awt.Graphics;
 
 public class King extends Piece {
 
-	final String icon = "\u2654";
+	//final String icon = "\u2654";
 	
 	King(boolean isWhite) {
 
-		super(isWhite);
+		super(isWhite, "\u2654");
 
 	}
 

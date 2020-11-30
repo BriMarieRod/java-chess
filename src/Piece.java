@@ -3,10 +3,16 @@ import java.awt.Graphics;
 public abstract class Piece {
 	
 	final boolean isWhite;
+	final String icon;
 
-	Piece(boolean isWhite) {
+	final boolean isSelected;
+
+	Piece(boolean isWhite, String icon) {
 
 		this.isWhite = isWhite;
+		this.icon = icon;
+		
+		isSelected = false;
 
 	}
 

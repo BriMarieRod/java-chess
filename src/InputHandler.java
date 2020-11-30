@@ -7,7 +7,9 @@ public class InputHandler implements MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		int x = e.getX();
 		int y = e.getY();
-		System.out.println(x + ", " + y);
+		GameGraphics g = (GameGraphics)e.getSource();
+		g.handleClick(x, y);
+		g.repaint();
 	}
 
 	@Override
